@@ -51,8 +51,8 @@ func GetProcessIdFromPod(podUID, containerID string, getFullPath bool) (string, 
 			continue
 		}
 
-		for _, mountIfo := range mountInfoCollection {
-			root := mountIfo.Root
+		for _, mountInfo := range mountInfoCollection {
+			root := mountInfo.Root
 			podContainerCombo := path.Join(podUID, containerID)
 
 			if strings.Contains(root, podContainerCombo) {
